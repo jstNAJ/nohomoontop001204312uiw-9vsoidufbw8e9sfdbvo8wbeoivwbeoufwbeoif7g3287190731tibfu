@@ -1,0 +1,64 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "pyroo#8846",
+	LoadingTitle = "private script",
+	LoadingSubtitle = "by pyroo#8846",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil, 
+		FileName = "NajHub"
+	},
+})
+local Misc = Window:CreateTab("Misc")
+
+local Section = Misc:CreateSection("Spy")
+
+local players = game.Players:GetChildren()
+local PlayerList = {}
+
+for i,v in pairs(players) do
+    table.insert(PlayerList,v.Name)
+end
+
+Misc:CreateDropdown({
+	Name = "Spectate Player",
+	Options = PlayerList,
+	CurrentOption = "scegli Player",
+    Callback = function(pl)
+	 workspace.Camera.CameraSubject = game:GetService("Players")[pl].Character.Humanoid
+     Rayfield:Notify({
+        Title = "Spectando :",
+        Content = pl,
+        Duration = 6.5,
+        Image = 4483362458,
+    })
+	end,
+})
+
+
+Misc:CreateButton({
+	Name = "Stop Spectate",
+	CurrentValue = false,
+	Callback = function()
+		workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	end,
+})
+
+Misc:CreateButton({
+	Name = "chat spy",
+	CurrentValue = false,
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/4STvU9Mj"))()
+	end,
+})
+
+local Misc = Window:CreateTab("Da hood")
+
+Misc:CreateButton({
+	Name = "Load Pyro Hub",
+	CurrentValue = false,
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/jstNAJ/pyrohubcxcxcxxzvvsfdsvcxvesdsdsdsvcdsdfvscdvssdvcsxcwsdvsdvscxwedvsvcxq1133/main/pyrohub12409854093796083064cxzzugcx86zad6s"))()
+	end,
+})
