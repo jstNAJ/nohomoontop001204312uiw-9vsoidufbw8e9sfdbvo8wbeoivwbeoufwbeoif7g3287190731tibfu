@@ -1,15 +1,26 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "pyroo#8846",
-	LoadingTitle = "private script",
-	LoadingSubtitle = "by pyroo#8846",
-	ConfigurationSaving = {
-		Enabled = true,
-		FolderName = nil, 
-		FileName = "NajHub"
-	},
+   Name = "Pyro's private script!",
+   LoadingTitle = "Loading ur hot script",
+   LoadingSubtitle = "by pyroo#8846",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "pyro Hub"
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "pyro Hub",
+      Subtitle = "Key System",
+      Note = "text pyroo#8846 on discord for the key",
+      FileName = "PyroHubKey",
+      SaveKey = true,
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = "pyro hot"
+   }
 })
+
 local Misc = Window:CreateTab("Misc")
 
 local Section = Misc:CreateSection("Spy")
@@ -53,6 +64,112 @@ Misc:CreateButton({
 	end,
 })
 
+Misc:CreateSlider({
+   Name = "Speed",
+   Range = {16, 100},
+   Increment = 1,
+   Suffix = "WalkSpeed",
+   CurrentValue = 1,
+   Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
+
+Misc:CreateSlider({
+   Name = "Jump",
+   Range = {7, 100},
+   Increment = 1,
+   Suffix = "JumpPower",
+   CurrentValue = 1,
+   Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpHeight= (Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
+
+local Misc = Window:CreateTab("Italian Ragdoll")
+
+Misc:CreateDropdown({
+	Name = "TP to Player",
+	Options = PlayerList,
+	CurrentOption = "scegli Player",
+    Callback = function(pl)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players")[pl].Character.HumanoidRootPart.CFrame
+        Rayfield:Notify({
+        Title = "Teletrasportato a :",
+        Content = pl,
+        Duration = 6.5,
+        Image = 4483362458,
+    })
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp grattacielo",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(338, 1015, 176) + Vector3.new(1,0,0)
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp area bombe",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-350, 4, 180) + Vector3.new(1,0,0)
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp scale",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31, 184, -265) + Vector3.new(1,0,0)
+	end,
+})
+Misc:CreateButton({
+	Name = "tp hard obby",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-112, 164, 473) + Vector3.new(1,0,0)
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp cafe shop",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252, 4, 516) + Vector3.new(1,0,0)
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp montagne",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 181, 752) + Vector3.new(1,0,0)
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp area segreta",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-219, 3280, 39) + Vector3.new(1,0,0)
+	end,
+})
+
+Misc:CreateButton({
+	Name = "tp centro",
+	CurrentValue = false,
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-33, 23, 174) + Vector3.new(1,0,0)
+	end,
+})
+
 local Misc = Window:CreateTab("Da hood")
 
 Misc:CreateButton({
@@ -62,3 +179,4 @@ Misc:CreateButton({
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/jstNAJ/pyrohubcxcxcxxzvvsfdsvcxvesdsdsdsvcdsdfvscdvssdvcsxcwsdvsdvscxwedvsvcxq1133/main/pyrohub12409854093796083064cxzzugcx86zad6s"))()
 	end,
 })
+
